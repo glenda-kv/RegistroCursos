@@ -1,0 +1,74 @@
+﻿@model RegistroCursos.Models.Inscripcion
+
+
+<div class="container">
+
+	<div class="card p-4 shadow">
+
+
+		<h2 style="color:#8e5ea2">
+
+			📌 Detalle de inscripción
+
+		</h2>
+
+
+		<hr>
+
+
+		<p>
+			<strong>
+				Estudiante:
+			</strong>
+
+			@Model.Estudiante.Nombre
+			@Model.Estudiante.Apellido
+
+		</p>
+
+
+		<p>
+
+			<strong>
+				Curso:
+			</strong>
+
+			@Model.Curso.Nombre
+
+		</p>
+
+
+		<p>
+
+			<strong>
+				Estado:
+			</strong>
+
+			@Model.Estado
+
+		</p>
+
+
+		<p>
+
+			<strong>
+				Nota final:
+			</strong>
+
+			@Model.NotaFinal
+
+		</p>
+
+
+
+		<a asp-action="Index"
+		   class="btn btn-secondary">
+
+			Volver
+
+		</a>
+
+
+	</div>
+
+</div>

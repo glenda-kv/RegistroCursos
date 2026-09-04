@@ -1,0 +1,155 @@
+﻿@model RegistroCursos.Models.Inscripcion
+
+
+<style>
+
+    body {
+        background: #fff7fb;
+    }
+
+
+    .form-card {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    }
+
+
+    .titulo {
+        color: #8e5ea2;
+        font-weight: bold;
+    }
+
+
+    .btn-guardar {
+        background: #a8e6cf;
+        border: none;
+        color: #355c4d;
+    }
+
+</style>
+
+
+<div class="container mt-4">
+
+    <div class="form-card">
+
+        <h2 class="titulo mb-4">
+            📝 Registrar estudiante en curso
+        </h2>
+
+
+        <form asp-action="Create">
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Estudiante
+                </label>
+
+                <select asp-for="IdEstudiante"
+                        asp-items="ViewBag.Estudiantes"
+                        class="form-select">
+
+                    <option value="0">
+                        Seleccione estudiante
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Curso
+                </label>
+
+                <select asp-for="IdCurso"
+                        asp-items="ViewBag.Cursos"
+                        class="form-select">
+
+                    <option value="0">
+                        Seleccione curso
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Fecha de inscripción
+                </label>
+
+                <input asp-for="FechaInscripcion"
+                       class="form-control" />
+
+            </div>
+
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Estado
+                </label>
+
+                <select asp-for="Estado"
+                        class="form-select">
+
+                    <option value="Activo">
+                        Activo
+                    </option>
+
+                    <option value="Finalizado">
+                        Finalizado
+                    </option>
+
+                    <option value="Retirado">
+                        Retirado
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Nota final
+                </label>
+
+                <input asp-for="NotaFinal"
+                       class="form-control" />
+
+            </div>
+
+
+
+            <button type="submit" class="btn btn-guardar">
+                💾 Guardar inscripción
+            </button>
+
+
+            <a asp-action="Index" class="btn btn-secondary">
+                Volver
+            </a>
+
+
+        </form>
+
+    </div>
+
+</div>

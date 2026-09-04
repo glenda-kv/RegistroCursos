@@ -1,0 +1,74 @@
+﻿@model RegistroCursos.Models.Inscripcion
+
+
+<div class="container">
+
+
+	<div class="card p-4 shadow">
+
+
+		<h2 style="color:#d9534f">
+			🗑 Eliminar inscripción
+		</h2>
+
+
+
+		<p>
+			¿Está seguro de eliminar esta inscripción?
+		</p>
+
+
+
+		<p>
+			<strong>
+				Estudiante:
+			</strong>
+
+			@Model.Estudiante.Nombre
+			@Model.Estudiante.Apellido
+
+		</p>
+
+
+
+		<p>
+			<strong>
+				Curso:
+			</strong>
+
+			@Model.Curso.Nombre
+
+		</p>
+
+
+
+		<form asp-action="DeleteConfirmed">
+
+
+			<input type="hidden"
+				   asp-for="IdInscripcion" />
+
+
+			<button class="btn btn-danger">
+
+				Eliminar
+
+			</button>
+
+
+			<a asp-action="Index"
+			   class="btn btn-secondary">
+
+				Cancelar
+
+			</a>
+
+
+
+		</form>
+
+
+	</div>
+
+
+</div>
